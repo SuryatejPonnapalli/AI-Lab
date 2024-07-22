@@ -1,54 +1,30 @@
-import random
-import math
 import pandas as pd
 
+percept_sequence = input("Enter sequence of percepts (e.g., 'c c c d c'): ").strip().split()
 
-m = random.randint(8,15)
-n = random.randint(8,15)
-area = m * n
-result = " "
+result = ""
 result_array = []
-
-no_of_squares = math.ceil(area/10)
-
-array_of_status_of_squares = []
-
-action = " "
-action2 = " "
 action_array = []
 
-for i in range (1,no_of_squares+1):
-    rand = random.randint(1,20)
-    if(rand == 2):
-        array_of_status_of_squares.append({
-            "room_number": i,
-            "room_status": "d"
-        })
+for i, percept in enumerate(percept_sequence):
+    room_number = i + 1  
+    result += f"{room_number}{percept} "
+    result_array.append(result.strip())
+
+    if percept == "d":
+        action = "cleaning"
+        action_array.append(action)
+        percept_sequence[i] = "c"
+        result += f"{room_number}c "
+        result_array.append(result.strip())
+        action = "moving next"
+        action_array.append(action)
     else:
-        array_of_status_of_squares.append({
-            "room_number": i,
-            "room_status": "c"
-        })
+        action = "moving next"
+        action_array.append(action)
 
-for i in array_of_status_of_squares:
-         result = result + f"{i['room_number']}{i['room_status']} "
-         result_array.append(result)
-         if(i["room_status"] == "d"):
-                i["room_status"] == "c"
-                result = result + f"{i['room_number']}c "
-                result_array.append(result)
-                action = "cleaning"
-                action2 = "moving next"
-                action_array.append(action)
-                action_array.append(action2)
-         else:
-            action = "moving next"
-            action_array.append(action)
-
-data = {'Percepts':result_array,
-        "Actions": action_array
-        }
-
+data = {'Percepts': result_array, "Actions": action_array}
 df = pd.DataFrame(data)
 
 print(df)
+
