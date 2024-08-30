@@ -1,3 +1,29 @@
+#TEAM MEMBERS
+#HU22CSEN0300183 - SURYATEJ
+#HU22CSEN0300317 - HARSHITH
+#HU22CSEN0300313 - DHANUSH
+
+#OBSERVATION FROM THE EXPERIMENT
+# - We implemented Dfs bfs and ucs on map of romania the task being to reach bucharest from arad
+
+#BFS
+# - It is complete which means it finds the destination at all cost if the solution exists.
+# - It takes comparetively more memory as it covers all nodes at a given level to go to next level.
+# - can be optimal if all path has same cost
+
+#DFS
+# - It doesn't take path cost into account similar to bfs.
+# - It is s memory efficient. 
+# - It is not complete as it can go into infinite loop.
+# - not optimal.
+
+#UCS
+# - It gives the shorted path to the destination with the help of priority queue.
+# - It is complete.
+# - It can consume alot of memory as it keeps track of all the costs of the nodes.
+# - It is optiomal
+
+
 romaniaMap = {
     'Arad': [('Sibiu', 140), ('Zerind', 75), ('Timisoara', 118)],
     'Zerind': [('Arad', 75), ('Oradea', 71)],
