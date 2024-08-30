@@ -1,3 +1,8 @@
+#TEAM 
+#HU22CSEN0300313 K DHANUSH KUMAR
+#HU22CSEN0300183 P SURYATEJ
+#HU22CSEN0300317 POLI SAI HARSHITH
+
 # This is a code that we have written for A*
 # The efficiency and optimality of A* are highly dependent on the heuristic used. If the heuristic is not well-designed (i.e., it overestimates or underestimates the actual cost), A* might not find the most efficient route.
 # A* is particularly useful in scenarios where speed is more critical than absolute optimality, such as real-time systems, video games, or situations where finding a "good enough" solution quickly is more important than finding the perfect one.
